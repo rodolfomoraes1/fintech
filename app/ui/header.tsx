@@ -1,6 +1,6 @@
+import { Bars3Icon } from "@heroicons/react/24/outline";
 import { Button } from "./button"
 import Image from "next/image";
-
 
 //"bg-primary-gradient"
 //"text-lg"
@@ -9,6 +9,32 @@ export default function Header () {
     return (
         <header className="bg-bgColors-black">
             <div className="flex items-center h-20 px-4 gap-4">
+
+            <div className="block md:hidden">
+                {/* visível em telas menores que 768px (mobile) */}
+            </div>
+
+            <div className="hidden md:block lg:hidden">
+                {/* visível apenas entre 768px e 1023px (tablet) */}
+            </div>
+
+            <div className="hidden lg:block">
+                {/* visível apenas em ≥ 1024px (desktop) */}
+            </div>
+
+                <div className="block md:hidden">
+                    <Bars3Icon className="h-6 w-6 text-white" />
+                </div>
+
+                <div className="hidden md:flex lg:hidden items-center">
+                    <Image
+                        width={27}
+                        height={27}
+                        src="/fintech/favicon-small.png"
+                        alt="Fintech logo"
+                        className="hidden md:block"
+                    />
+                </div>
                 
                 {/* Start Spacer */}
                 <span className="flex-grow" />
