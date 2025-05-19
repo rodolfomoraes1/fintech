@@ -6,6 +6,8 @@ For more information, see the [course curriculum](https://nextjs.org/learn) on t
 
 App next
 
+- [x] Landing Page
+
 - [ ] Home Page
       Uma página inicial simples que dá boas-vindas aos usuários.
       Exibir informações sobre o saldo da conta corrente e um extrato das
@@ -35,3 +37,4 @@ Design system
 - [ ] tamanhos basicos
 - [ ] componentes basicos de UI
 - [ ] componentes especificos
+- [x] header home

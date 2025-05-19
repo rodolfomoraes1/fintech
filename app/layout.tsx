@@ -3,6 +3,7 @@ import "@/app/ui/global.css";
 import { inter } from "@/app/ui/fonts";
 import { Button } from "./ui/button";
 import Header from "./ui/header";
+import { Footer } from "./ui/footer";
 
 export const metadata: Metadata = {
   title: {
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
