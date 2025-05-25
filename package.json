@@ -9,7 +9,10 @@
     "lint:prettier:fix": "prettier --write ."
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@heroicons/react": "^2.2.0",
+    "@mui/material": "^7.1.0",
     "autoprefixer": "10.4.20",
     "bcryptjs": "^3.0.2",
     "clsx": "^2.1.1",

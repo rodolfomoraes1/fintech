@@ -6,7 +6,7 @@ import {
   CardsSkeleton,
   LatestInvoicesSkeleton,
   RevenueChartSkeleton,
-} from "@/app/ui/skeletons";
+} from "@/app/ui/components/skeletons";
 import CardWrapper from "@/app/ui/dashboard/cards";
 
 export default async function Page() {

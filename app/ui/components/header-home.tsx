@@ -1,22 +1,58 @@
 "use client";
 
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Button } from "./button";
 import Image from "next/image";
 import { useState } from "react";
+import { LoginModal } from "./login-modal";
+import { Button } from "./button";
+import { useRouter } from "next/navigation";
+import { RegisterModal } from "./register-modal";
 
-export default function Header() {
+export default function HeaderHome() {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
+  const router = useRouter();
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
   };
 
+  const handleClickLoginButton = () => {
+    setIsLoginModalOpen(true);
+  };
+
+  const handleClickEmConstrucao = () => {
+    router.push("/em-contrucao");
+  };
+
+  const handleClickLogo = () => {
+    router.push("/");
+  };
+
+  const handleCloseLoginModal = () => {
+    setIsLoginModalOpen(false);
+  };
+
+  const handleRegisterUserButton = () => {
+    setIsRegisterModalOpen(true);
+  };
+
+  const handleCloseRegisterModal = () => {
+    setIsRegisterModalOpen(false);
+  };
+
   return (
     <header className="bg-bgColors-black">
+      <LoginModal open={isLoginModalOpen} onClose={handleCloseLoginModal} />
+
+      <RegisterModal
+        open={isRegisterModalOpen}
+        onClose={handleCloseRegisterModal}
+      />
       <div>
         {/* Layout para mobile (768px) */}
-        <div className="flex items-center justify-between px-12 h-20 md:hidden space-x-4">
+        <div className="flex items-center justify-between px-12 h-20 md:hidden space-x-4 cursor-pointer">
           <button
             className="md:hidden p-2 rounded-md text-gray-700 hover:bg-gray-100 focus:outline-none"
             onClick={toggleDrawer}
@@ -29,6 +65,8 @@ export default function Header() {
             height={32}
             src="/fintech/logo.png"
             alt="Fintech logo"
+            onClick={handleClickLogo}
+            className="cursor-pointer"
           />
         </div>
 
@@ -41,7 +79,8 @@ export default function Header() {
               height={27}
               src="/fintech/favicon-small.png"
               alt="Fintech logo"
-              className="md:block lg:hidden"
+              className="md:block lg:hidden cursor-pointer"
+              onClick={handleClickLogo}
             />
 
             {/* Desktop (≥1024px) */}
@@ -50,19 +89,28 @@ export default function Header() {
               height={32}
               src="/fintech/logo.png"
               alt="Fintech logo"
-              className="hidden lg:block"
+              className="hidden lg:block cursor-pointer"
+              onClick={handleClickLogo}
             />
           </div>
 
           <div className="flex items-center space-x-4">
             <nav className="flex space-x-4">
-              <Button variant="link">Sobre</Button>
-              <Button variant="link">Serviços</Button>
+              <Button variant="link" onClick={handleClickEmConstrucao}>
+                Sobre
+              </Button>
+              <Button variant="link" onClick={handleClickEmConstrucao}>
+                Serviços
+              </Button>
             </nav>
 
             <div className="flex space-x-2 ml-4">
-              <Button variant="primary">Abrir uma conta</Button>
-              <Button variant="secondary">Já tenho uma conta</Button>
+              <Button variant="primary" onClick={handleRegisterUserButton}>
+                Abrir uma conta
+              </Button>
+              <Button variant="secondary" onClick={handleClickLoginButton}>
+                Já tenho uma conta
+              </Button>
             </div>
           </div>
         </div>
@@ -88,8 +136,12 @@ export default function Header() {
               </nav>
 
               <div className="flex flex-col space-y-2 mt-8">
-                <Button variant="primary">Abrir uma conta</Button>
-                <Button variant="secondary">Já tenho uma conta</Button>
+                <Button variant="primary" onClick={handleRegisterUserButton}>
+                  Abrir uma conta
+                </Button>
+                <Button variant="secondary" onClick={handleClickLoginButton}>
+                  Já tenho uma conta
+                </Button>
               </div>
 
               <div className="flex justify-center py-4 mt-auto">
