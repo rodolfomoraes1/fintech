@@ -36,6 +36,9 @@ export default function UserMenu() {
         transformOrigin={{ vertical: "top", horizontal: "right" }}
       >
         <MenuItem onClick={() => alert("Ir para configurações")}>
+          Minha Conta
+        </MenuItem>
+        <MenuItem onClick={() => alert("Ir para configurações")}>
           Configurações
         </MenuItem>
         <MenuItem onClick={handleLogout} sx={{ color: "red" }}>

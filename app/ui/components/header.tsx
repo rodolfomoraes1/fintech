@@ -8,17 +8,16 @@ import UserMenu from "./user-menu";
 
 export default function Header() {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <AppBar position="static" className="!bg-dark">
       <Toolbar className="flex justify-between px-4">
         <div className="flex items-center">
-          {isMobile && (
+          <div className="block sm:hidden">
             <IconButton edge="start" color="inherit" aria-label="menu">
               <Bars3Icon className="h-10 w-10 text-secondary" />
             </IconButton>
-          )}
+          </div>
         </div>
 
         <UserMenu />
