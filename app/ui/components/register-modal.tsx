@@ -38,6 +38,12 @@ export function RegisterModal({ open, onClose }: RegisterModalProps) {
         action={formAction}
         className="w-full flex flex-col gap-4 pt-12"
       >
+        <Alert severity="warning" className="mb-6">
+          <Typography variant="body2" component="span">
+            Em construção
+          </Typography>
+        </Alert>
+
         <Typography fontWeight="bold">Nome</Typography>
         <TextField
           id="outlined-basic"
@@ -73,12 +79,6 @@ export function RegisterModal({ open, onClose }: RegisterModalProps) {
             Criar conta
           </Button>
         </Box>
-
-        <Alert severity="warning">
-          <Typography variant="body2" component="span">
-            Em construção
-          </Typography>
-        </Alert>
       </Box>
     </Modal>
   );

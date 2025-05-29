@@ -63,6 +63,7 @@ export function LoginModal({ open, onClose }: LoginModalProps) {
             {isPending ? "Carregando..." : "Acessar"}
           </Button>
         </Box>
+        <input type="hidden" name="redirectTo" value={callbackUrl} />
 
         {errorMessage && (
           <Alert severity="error">

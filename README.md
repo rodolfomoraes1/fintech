@@ -1,40 +1,62 @@
-## Next.js App Router Course - Starter
+# Tech challenge 1
 
-This is the starter template for the Next.js App Router Course. It contains the starting code for the dashboard application.
+## Objetivo
 
-For more information, see the [course curriculum](https://nextjs.org/learn) on the Next.js Website.
+Criar uma interface que permita aos usuários gerenciar suas transações financeiras.
+Além disso, aplique os conceitos de Programação Orientada a Objetos (POO).
 
-App next
+## Ferramentas
 
-- [x] Landing Page
+- nextjs
+- pnpm
+- tailwind css
+- mui material
+- typescript
 
-- [ ] Home Page
-      Uma página inicial simples que dá boas-vindas aos usuários.
-      Exibir informações sobre o saldo da conta corrente e um extrato das
-      últimas transações
-      Incluir uma seção para iniciar uma nova transação, com opções para
-      selecionar o tipo de transação e inserir o valor
+## Executar o projeto localmente
 
-- [ ] Listagem de Transações
-      Uma página que exibe a lista de transações realizadas, com opções
-      para visualizar detalhes, editar e deletar cada transação.
+1 - Instalar dependências
+`pnpm i`
 
-- [ ] Adicionar Nova Transação
-      Uma página ou modal para adicionar uma nova transação ao banco de
-      dados.
-      Formulário que deve incluir campos como tipo de transação (depósito,
+2 - Executar o projeto
+`pnpm run dev`
+
+3 - Faça login com o usuário
+email: `user@nextmail.com`
+password: `123456`
+
+## Requisitos
+
+### Home Page
+
+- [x] Uma página inicial simples que dá boas-vindas aos usuários (landing page).
+- [ ] Exibir informações sobre o saldo da conta corrente e um extrato das últimas transações.
+- [ ] Incluir uma seção para iniciar uma nova transação, com opções para selecionar o tipo de transação e inserir o valor
+
+### Listagem de Transações
+
+- [ ] Uma página que exibe a lista de transações realizadas, com opções para visualizar detalhes, editar e deletar cada transação.
+
+### Adicionar Nova Transação
+
+- [ ] Uma página ou modal para adicionar uma nova transação ao banco de dados.
+- [ ] Formulário que deve incluir campos como tipo de transação (depósito,
       transferência, etc.), valor e data.
 
-- [ ] Editar Transação
-      Uma página ou modal para editar as informações de uma transação
-      existente
+### Editar Transação
 
-Design system
+- [ ] Uma página ou modal para editar as informações de uma transação existente
 
-- [ ] fundação
-- [ ] importar componentes existentes
+### Design system
+
 - [ ] cores basicas
 - [ ] tamanhos basicos
 - [ ] componentes basicos de UI
 - [ ] componentes especificos
-- [x] header home
+
+### Adicionais
+
+- [x] Login
+- [x] Registrar (sem integração com BD)
+- [x] Página "Em construção"
+- [x] Página "Not found"
