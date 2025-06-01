@@ -1,6 +1,12 @@
 import bcrypt from "bcryptjs";
 import postgres from "postgres";
-import { invoices, customers, revenue, users } from "../lib/placeholder-data";
+import {
+  invoices,
+  customers,
+  revenue,
+  users,
+  personalInvoices,
+} from "../lib/placeholder-data";
 
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: "require" });
 
@@ -23,7 +29,7 @@ async function seedUsers() {
         VALUES (${user.id}, ${user.name}, ${user.email}, ${hashedPassword})
         ON CONFLICT (id) DO NOTHING;
       `;
-    }),
+    })
   );
 
   return insertedUsers;
@@ -48,8 +54,8 @@ async function seedInvoices() {
         INSERT INTO invoices (customer_id, amount, status, date)
         VALUES (${invoice.customer_id}, ${invoice.amount}, ${invoice.status}, ${invoice.date})
         ON CONFLICT (id) DO NOTHING;
-      `,
-    ),
+      `
+    )
   );
 
   return insertedInvoices;
@@ -73,8 +79,8 @@ async function seedCustomers() {
         INSERT INTO customers (id, name, email, image_url)
         VALUES (${customer.id}, ${customer.name}, ${customer.email}, ${customer.image_url})
         ON CONFLICT (id) DO NOTHING;
-      `,
-    ),
+      `
+    )
   );
 
   return insertedCustomers;
@@ -94,11 +100,52 @@ async function seedRevenue() {
         INSERT INTO revenue (month, revenue)
         VALUES (${rev.month}, ${rev.revenue})
         ON CONFLICT (month) DO NOTHING;
-      `,
-    ),
+      `
+    )
   );
 
   return insertedRevenue;
+}
+
+async function seedPersonalInvoices() {
+  await sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+
+  await sql`
+    CREATE TABLE IF NOT EXISTS personal_invoices (
+      id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+      receiver_name VARCHAR(255) NOT NULL,
+      amount INT NOT NULL,
+      date DATE NOT NULL,
+      type VARCHAR(255) NOT NULL
+    );
+  `;
+
+  const insertedPersonalInvoices = await Promise.all(
+    personalInvoices.map(
+      (personalInvoice) => sql`
+        INSERT INTO personal_invoices (receiver_name, amount, date, type)
+        VALUES (${personalInvoice.receiver_name}, ${personalInvoice.amount}, ${personalInvoice.date}, ${personalInvoice.type})
+        ON CONFLICT (id) DO NOTHING;
+      `
+    )
+  );
+
+  return insertedPersonalInvoices;
+}
+
+async function cleanDatabase() {
+  try {
+    await sql`DROP TABLE IF EXISTS personal_invoices`;
+    await sql`DROP TABLE IF EXISTS invoices`;
+    await sql`DROP TABLE IF EXISTS revenue`;
+    await sql`DROP TABLE IF EXISTS customers`;
+    await sql`DROP TABLE IF EXISTS users`;
+
+    console.log("Database cleaned successfully");
+  } catch (error) {
+    console.error("Error cleaning database:", error);
+    throw error;
+  }
 }
 
 export async function GET() {
@@ -108,6 +155,7 @@ export async function GET() {
       seedCustomers(),
       seedInvoices(),
       seedRevenue(),
+      seedPersonalInvoices(),
     ]);
 
     return Response.json({ message: "Database seeded successfully" });

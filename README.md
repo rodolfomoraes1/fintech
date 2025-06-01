@@ -35,17 +35,17 @@ password: `123456`
 
 ### Listagem de Transações
 
-- [ ] Uma página que exibe a lista de transações realizadas, com opções para visualizar detalhes, editar e deletar cada transação.
+- [x] Uma página que exibe a lista de transações realizadas, com opções para visualizar detalhes, editar e deletar cada transação.
 
 ### Adicionar Nova Transação
 
-- [ ] Uma página ou modal para adicionar uma nova transação ao banco de dados.
-- [ ] Formulário que deve incluir campos como tipo de transação (depósito,
+- [x] Uma página ou modal para adicionar uma nova transação ao banco de dados.
+- [x] Formulário que deve incluir campos como tipo de transação (depósito,
       transferência, etc.), valor e data.
 
 ### Editar Transação
 
-- [ ] Uma página ou modal para editar as informações de uma transação existente
+- [x] Uma página ou modal para editar as informações de uma transação existente
 
 ### Design system
 

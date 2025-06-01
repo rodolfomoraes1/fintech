@@ -1,5 +1,6 @@
 import postgres from "postgres";
 import {
+  PersonalInvoice,
   CustomerField,
   CustomersTableType,
   InvoiceForm,
@@ -80,7 +81,7 @@ export async function fetchCardData() {
 const ITEMS_PER_PAGE = 6;
 export async function fetchFilteredInvoices(
   query: string,
-  currentPage: number,
+  currentPage: number
 ) {
   const offset = (currentPage - 1) * ITEMS_PER_PAGE;
 
@@ -131,6 +132,99 @@ export async function fetchInvoicesPages(query: string) {
   } catch (error) {
     console.error("Database Error:", error);
     throw new Error("Failed to fetch total number of invoices.");
+  }
+}
+
+export async function fetchPersonalInvoices() {
+  try {
+    const personalInvoices = await sql<PersonalInvoice[]>`
+      SELECT
+        personal_invoices.id,
+        personal_invoices.receiver_name,
+        personal_invoices.amount,
+        personal_invoices.date
+      FROM personal_invoices
+      ORDER BY personal_invoices.date DESC
+    `;
+
+    return personalInvoices;
+  } catch (err) {
+    console.error("Database Error:", err);
+    throw new Error("Failed to fetch personal invoices.");
+  }
+}
+
+export async function fetchFilteredPersonalInvoices(
+  query: string,
+  currentPage: number
+) {
+  const offset = (currentPage - 1) * ITEMS_PER_PAGE;
+
+  try {
+    const personalInvoices = await sql<PersonalInvoice[]>`
+      SELECT
+        personal_invoices.id,
+        personal_invoices.receiver_name,
+        personal_invoices.amount,
+        personal_invoices.date,
+        personal_invoices.type
+      FROM personal_invoices
+      WHERE
+        personal_invoices.receiver_name ILIKE ${`%${query}%`} OR
+        personal_invoices.amount::text ILIKE ${`%${query}%`} OR
+        personal_invoices.type::text ILIKE ${`%${query}%`} OR
+        personal_invoices.date::text ILIKE ${`%${query}%`}
+      ORDER BY personal_invoices.date DESC
+      LIMIT ${ITEMS_PER_PAGE} OFFSET ${offset}
+    `;
+
+    return personalInvoices;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch invoices.");
+  }
+}
+
+export async function fetchPersonalInvoicesPages(query: string) {
+  try {
+    const data = await sql`SELECT COUNT(*)
+    FROM personal_invoices
+    WHERE
+      personal_invoices.receiver_name ILIKE ${`%${query}%`} OR
+      personal_invoices.amount::text ILIKE ${`%${query}%`} OR
+      personal_invoices.date::text ILIKE ${`%${query}%`} OR
+      personal_invoices.type ILIKE ${`%${query}%`}
+  `;
+
+    const totalPages = Math.ceil(Number(data[0].count) / ITEMS_PER_PAGE);
+    return totalPages;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch total number of invoices.");
+  }
+}
+
+export async function fetchPersonalInvoiceById(id: string) {
+  try {
+    const data = await sql<PersonalInvoice[]>`
+      SELECT
+        personal_invoices.id,
+        personal_invoices.receiver_name,
+        personal_invoices.amount,
+        personal_invoices.type
+      FROM personal_invoices
+      WHERE personal_invoices.id = ${id};
+    `;
+
+    const personalInvoice = data.map((personalInvoice) => ({
+      ...personalInvoice,
+      amount: personalInvoice.amount / 100,
+    }));
+
+    return personalInvoice[0];
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch invoice.");
   }
 }
 

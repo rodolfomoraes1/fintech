@@ -29,5 +29,7 @@ module.exports = {
     black: "#000000",
     lightGray: "#F8F8F8",
     paleGreen: "#E4EDE3",
+    ice: "#F5F5F5",
+    gray: "#CBCBCB",
   },
 };

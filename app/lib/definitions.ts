@@ -86,3 +86,11 @@ export type InvoiceForm = {
   amount: number;
   status: "pending" | "paid";
 };
+
+export type PersonalInvoice = {
+  id: string;
+  receiver_name: string;
+  amount: number;
+  date: string;
+  type: "deposito" | "transferencia" | "pagamento";
+};

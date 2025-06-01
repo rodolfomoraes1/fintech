@@ -1,11 +1,11 @@
 import Pagination from "@/app/ui/invoices/pagination";
 import Search from "@/app/ui/components/search";
-import Table from "@/app/ui/invoices/table";
-import { CreateInvoice } from "@/app/ui/invoices/buttons";
+import { CreateInvoice } from "@/app/ui/personal-invoices/buttons";
 import { InvoicesTableSkeleton } from "@/app/ui/components/skeletons";
 import { Suspense } from "react";
-import { fetchInvoicesPages } from "@/app/lib/data";
+import { fetchPersonalInvoicesPages } from "@/app/lib/data";
 import { Metadata } from "next";
+import InvoicesTable from "@/app/ui/personal-invoices/table";
 
 export const metadata: Metadata = {
   title: "Invoices",
@@ -20,19 +20,19 @@ export default async function Page(props: {
   const searchParams = await props.searchParams;
   const query = searchParams?.query || "";
   const currentPage = Number(searchParams?.page) || 1;
-  const totalPages = await fetchInvoicesPages(query);
+  const totalPages = await fetchPersonalInvoicesPages(query);
 
   return (
     <div className="w-full">
       <div className="flex w-full items-center justify-between">
-        <h1 className="text-2xl">Transferências</h1>
+        <h1 className="text-2xl">Movimentos</h1>
       </div>
       <div className="mt-4 flex items-center justify-between gap-2 md:mt-8">
-        <Search placeholder="Buscar transferências..." />
+        <Search placeholder="Buscar operações..." />
         <CreateInvoice />
       </div>
       <Suspense key={query + currentPage} fallback={<InvoicesTableSkeleton />}>
-        <Table query={query} currentPage={currentPage} />
+        <InvoicesTable query={query} currentPage={currentPage} />
       </Suspense>
       <div className="mt-5 flex w-full justify-center">
         <Pagination totalPages={totalPages} />

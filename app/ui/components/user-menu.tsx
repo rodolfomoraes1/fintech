@@ -41,9 +41,6 @@ export default function UserMenu() {
         <MenuItem onClick={() => alert("Ir para configurações")}>
           Configurações
         </MenuItem>
-        <MenuItem onClick={handleLogout} sx={{ color: "red" }}>
-          Sair
-        </MenuItem>
       </Menu>
     </div>
   );

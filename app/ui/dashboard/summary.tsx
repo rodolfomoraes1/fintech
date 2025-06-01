@@ -5,8 +5,8 @@ import { LatestInvoice } from "@/app/lib/definitions";
 import { fetchLatestInvoices } from "@/app/lib/data";
 import Card from "../components/card";
 
-export default async function Cards() {
+export default async function Summary() {
   const latestInvoices = await fetchLatestInvoices();
 
-  return <Card variant="gray">cartões</Card>;
+  return <Card>teste</Card>;
 }

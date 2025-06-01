@@ -10,7 +10,7 @@ export default function Header() {
   const theme = useTheme();
 
   return (
-    <AppBar position="static" className="!bg-dark">
+    <AppBar position="fixed" className="!bg-dark">
       <Toolbar className="flex justify-between px-4">
         <div className="flex items-center">
           <div className="block sm:hidden">
