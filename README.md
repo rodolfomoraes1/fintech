@@ -12,6 +12,11 @@ Além disso, aplique os conceitos de Programação Orientada a Objetos (POO).
 - tailwind css
 - mui material
 - typescript
+- storybook
+
+## Repositório
+
+`https://github.com/rodolfomoraes1/fintech/`
 
 ## Executar o projeto localmente
 
@@ -21,9 +26,20 @@ Além disso, aplique os conceitos de Programação Orientada a Objetos (POO).
 2 - Executar o projeto
 `pnpm run dev`
 
-3 - Faça login com o usuário
+3 - Acessar a url
+`localhost:3000`
+
+4 - Para povoar o banco de dados acessar a url `/seed`
+`localhost:3000/seed`
+
+5 - Faça login com o usuário
 email: `user@email.com`
 password: `123456`
+
+## Design System
+
+1 - Executar o comando
+`pnpm run storybook`
 
 ## Requisitos
 
@@ -49,10 +65,9 @@ password: `123456`
 
 ### Design system
 
-- [ ] cores basicas
-- [ ] tamanhos basicos
-- [ ] componentes basicos de UI
-- [ ] componentes especificos
+- [x] Criar design system
+- [x] Cores basicas
+- [x] Componentes basicos de UI
 
 ### Adicionais
 

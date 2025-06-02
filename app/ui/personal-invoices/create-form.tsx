@@ -2,12 +2,10 @@
 
 import Link from "next/link";
 import {
-  CheckIcon,
-  ClockIcon,
   CurrencyDollarIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
-import { Button } from "@/app/ui/components/button";
+import { Button } from "@/app/ui/components/button/button";
 import { createPersonalInvoice, NewState } from "@/app/lib/actions";
 import { useActionState } from "react";
 

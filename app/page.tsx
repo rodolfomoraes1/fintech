@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { AdvantageCard } from "./ui/components/advantage-card";
+import { AdvantageCard } from "./ui/components/advantage-card/advantage-card";
 import { Footer } from "./ui/components/footer";
 import HeaderHome from "./ui/components/header-home";
 

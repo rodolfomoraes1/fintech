@@ -11,7 +11,7 @@ import {
   Alert,
 } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
-import { Button } from "./button";
+import { Button } from "./button/button";
 
 const modalStyle = {
   position: "absolute",

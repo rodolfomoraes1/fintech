@@ -4,7 +4,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import { useState } from "react";
 import { LoginModal } from "./login-modal";
-import { Button } from "./button";
+import { Button } from "./button/button";
 import { useRouter } from "next/navigation";
 import { RegisterModal } from "./register-modal";
 

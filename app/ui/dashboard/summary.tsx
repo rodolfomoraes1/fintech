@@ -1,5 +1,5 @@
 import { fetchUserBalance, fetchUserInfo } from "@/app/lib/data";
-import Card from "../components/card";
+import Card from "../components/card/card";
 import { formatDateToLocalInSeconds, formatCurrency } from "@/app/lib/utils";
 
 export default async function Summary() {
@@ -8,7 +8,7 @@ export default async function Summary() {
 
   return (
     <Card>
-      <div className="flex flex-col md:flex-row items-center gap-4 p-6 rounded-lg shadow-md">
+      <div className="flex flex-col md:flex-row items-center gap-4 p-6">
         <div className="flex-1 text-center md:text-left">
           <h1 className="text-2xl font-bold">Olá, {user[0].name} :)</h1>
         </div>

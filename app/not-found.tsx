@@ -3,7 +3,7 @@
 import HeaderHome from "./ui/components/header-home";
 import { Footer } from "./ui/components/footer";
 import Image from "next/image";
-import { Button } from "./ui/components/button";
+import { Button } from "./ui/components/button/button";
 import { useRouter } from "next/navigation";
 
 export default function NotFound() {

@@ -1,0 +1,245 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+<Meta title="Design System/Cores" />
+
+<div className="sb-container">
+  <div className='sb-section-title'>
+    # Paleta de Cores do Design System
+
+    Documentação completa das cores utilizadas no projeto, incluindo valores HEX e exemplos de uso.
+
+  </div>
+</div>
+
+<div className="sb-container">
+  <div className='sb-section-title'>
+    ## Cores Principais
+  </div>
+
+  <div className="sb-colors-grid">
+    <div className="sb-color-card" style={{ backgroundColor: '#47A138' }}>
+      <div className="sb-color-info">
+        <strong>Primary</strong>
+        <span>#47A138</span>
+      </div>
+    </div>
+    
+    <div className="sb-color-card" style={{ backgroundColor: '#FF5031' }}>
+      <div className="sb-color-info">
+        <strong>Secondary</strong>
+        <span>#FF5031</span>
+      </div>
+    </div>
+    
+    <div className="sb-color-card" style={{ backgroundColor: '#004D61', color: 'white' }}>
+      <div className="sb-color-info">
+        <strong>Dark</strong>
+        <span>#004D61</span>
+      </div>
+    </div>
+    
+    <div className="sb-color-card" style={{ backgroundColor: '#DEE9EA' }}>
+      <div className="sb-color-info">
+        <strong>Light</strong>
+        <span>#DEE9EA</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className="sb-container">
+  <div className='sb-section-title'>
+    ## Tons de Verde
+  </div>
+
+  <div className="sb-colors-grid">
+    <div className="sb-color-card" style={{ backgroundColor: '#47A138' }}>
+      <div className="sb-color-info">
+        <strong>Green 400</strong>
+        <span>#47A138</span>
+      </div>
+    </div>
+    
+    <div className="sb-color-card" style={{ backgroundColor: '#2F8D32' }}>
+      <div className="sb-color-info">
+        <strong>Green 500</strong>
+        <span>#2F8D32</span>
+      </div>
+    </div>
+    
+    <div className="sb-color-card" style={{ backgroundColor: '#006B23', color: 'white' }}>
+      <div className="sb-color-info">
+        <strong>Green 600</strong>
+        <span>#006B23</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className="sb-container">
+  <div className='sb-section-title'>
+    ## Tons de Vermelho
+  </div>
+
+  <div className="sb-colors-grid">
+    <div className="sb-color-card" style={{ backgroundColor: '#FF6B6B' }}>
+      <div className="sb-color-info">
+        <strong>Red 400</strong>
+        <span>#FF6B6B</span>
+      </div>
+    </div>
+    
+    <div className="sb-color-card" style={{ backgroundColor: '#FF5031' }}>
+      <div className="sb-color-info">
+        <strong>Red 500</strong>
+        <span>#FF5031</span>
+      </div>
+    </div>
+    
+    <div className="sb-color-card" style={{ backgroundColor: '#D7381D', color: 'white' }}>
+      <div className="sb-color-info">
+        <strong>Red 600</strong>
+        <span>#D7381D</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className="sb-container">
+  <div className='sb-section-title'>
+    ## Cores de Fundo
+  </div>
+
+  <div className="sb-colors-grid">
+    <div className="sb-color-card" style={{ backgroundColor: '#000000', color: 'white' }}>
+      <div className="sb-color-info">
+        <strong>bg-black</strong>
+        <span>#000000</span>
+      </div>
+    </div>
+    
+    <div className="sb-color-card" style={{ backgroundColor: '#F8F8F8' }}>
+      <div className="sb-color-info">
+        <strong>bg-lightGray</strong>
+        <span>#F8F8F8</span>
+      </div>
+    </div>
+    
+    <div className="sb-color-card" style={{ backgroundColor: '#E4EDE3' }}>
+      <div className="sb-color-info">
+        <strong>bg-paleGreen</strong>
+        <span>#E4EDE3</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div className="sb-container">
+  <div className='sb-section-title'>
+    ## Como Utilizar
+  </div>
+
+  <div className="sb-feature-card">
+    <h3 className="sb-feature-header">Com Tailwind CSS</h3>
+    <pre className="sb-code-block">
+      {`<div className="bg-primary text-white p-4">
+  Botão Primário
+</div>`}
+    </pre>
+    
+    <h3 className="sb-feature-header">Com CSS Customizado</h3>
+    <pre className="sb-code-block">
+      {`.custom-element {
+  background-color: var(--color-primary);
+  color: white;
+}`}
+    </pre>
+  </div>
+</div>
+
+<style>
+  {`
+  .sb-colors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 24px 0;
+  }
+
+  .sb-color-card {
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 120px;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .sb-color-info {
+    background: rgba(255,255,255,0.9);
+    padding: 8px 12px;
+    border-radius: 4px;
+    width: 100%;
+  }
+
+  .sb-color-info span {
+    display: block;
+    font-size: 12px;
+    opacity: 0.8;
+  }
+
+  .sb-code-block {
+    background: #f7fafc;
+    padding: 16px;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+    font-family: monospace;
+    overflow-x: auto;
+  }
+
+  /* Reutilizando estilos do modelo fornecido */
+  .sb-container {
+    margin-bottom: 48px;
+  }
+
+  .sb-section-title {
+    margin-bottom: 24px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a365d;
+  }
+
+  .sb-feature-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid #e2e8f0;
+  }
+
+  .sb-feature-header {
+    margin: 16px 0 8px 0;
+    font-size: 16px;
+    color: #2d3748;
+  }
+
+  .sb-link {
+    color: #3182ce;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 16px;
+  }
+
+  .sb-link:hover {
+    text-decoration: underline;
+  }
+
+  @media screen and (max-width: 768px) {
+    .sb-colors-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  `}
+</style>

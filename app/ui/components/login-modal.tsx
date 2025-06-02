@@ -4,8 +4,8 @@ import React, { useActionState } from "react";
 import { authenticate } from "@/app/lib/actions";
 import { useSearchParams } from "next/navigation";
 import { Box, TextField, Typography, Alert } from "@mui/material";
-import { Button } from "./button";
-import { Modal } from "./modal";
+import { Button } from "./button/button";
+import { Modal } from "./modal/modal";
 
 const image = {
   imageSrc: "/fintech/login.png",

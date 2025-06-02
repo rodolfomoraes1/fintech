@@ -1,0 +1,325 @@
+import { Meta } from "@storybook/addon-docs/blocks";
+
+export const RightArrow = () => (
+  <svg
+    viewBox="0 0 14 14"
+    width="8px"
+    height="14px"
+    style={{
+      marginLeft: "4px",
+      display: "inline-block",
+      shapeRendering: "inherit",
+      verticalAlign: "middle",
+      fill: "currentColor",
+    }}
+  >
+    <path d="m11.1 7.35-5.5 5.5a.5.5 0 0 1-.7-.7L10.04 7 4.9 1.85a.5.5 0 1 1 .7-.7l5.5 5.5c.2.2.2.5 0 .7Z" />
+  </svg>
+);
+
+<Meta title="Fintech - Gerenciador Financeiro" />
+
+<div className="sb-container">
+  <div className='sb-section-title'>
+    # Fintech - Gerenciador de Transações Financeiras
+
+    Aplicação desenvolvida como desafio técnico para gerenciamento de transações financeiras pessoais, implementando conceitos de POO e utilizando as melhores tecnologias do ecossistema frontend.
+
+  </div>
+
+  <div className="sb-tech-stack">
+    <div className="sb-tech-item">
+      <div className="sb-tech-icon">⚛️</div>
+      <span>Next.js</span>
+    </div>
+    <div className="sb-tech-item">
+      <div className="sb-tech-icon">🎨</div>
+      <span>Tailwind CSS</span>
+    </div>
+    <div className="sb-tech-item">
+      <div className="sb-tech-icon">🧩</div>
+      <span>Material UI</span>
+    </div>
+    <div className="sb-tech-item">
+      <div className="sb-tech-icon">📝</div>
+      <span>TypeScript</span>
+    </div>
+    <div className="sb-tech-item">
+      <div className="sb-tech-icon">📚</div>
+      <span>Storybook</span>
+    </div>
+  </div>
+</div>
+
+<div className="sb-container">
+  <div className='sb-section-title'>
+    # Funcionalidades Implementadas
+  </div>
+
+  <div className="sb-features-grid">
+    <div className="sb-feature-card">
+      <div className="sb-feature-header">
+        <h3>🏠 Página Inicial</h3>
+      </div>
+      <ul className="sb-feature-list">
+        <li>✔️ Boas-vindas personalizadas</li>
+        <li>✔️ Visão geral do saldo</li>
+        <li>✔️ Extrato das últimas transações</li>
+        <li>✔️ Início rápido de nova transação</li>
+      </ul>
+    </div>
+
+    <div className="sb-feature-card">
+      <div className="sb-feature-header">
+        <h3>💸 Gestão de Transações</h3>
+      </div>
+      <ul className="sb-feature-list">
+        <li>✔️ Listagem completa</li>
+        <li>✔️ Filtros por tipo e data</li>
+        <li>✔️ Paginação</li>
+        <li>✔️ Edição e exclusão</li>
+      </ul>
+    </div>
+
+    <div className="sb-feature-card">
+      <div className="sb-feature-header">
+        <h3>🔄 Operações Financeiras</h3>
+      </div>
+      <ul className="sb-feature-list">
+        <li>✔️ Depósitos</li>
+        <li>✔️ Transferências</li>
+        <li>✔️ Pagamentos</li>
+        <li>✔️ Histórico completo</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div className="sb-container">
+  <div className='sb-section-title'>
+    # Design System
+  </div>
+
+  <div className="sb-feature-card">
+    <div className="sb-feature-header">
+      <h3>🎨 Componentes Reutilizáveis</h3>
+    </div>
+    <p className="sb-section-item-paragraph">
+      Biblioteca de componentes documentada no Storybook para garantir consistência visual e acelerar o desenvolvimento.
+    </p>
+    <div className="sb-components-list">
+      <span className="sb-component-tag">Buttons</span>
+      <span className="sb-component-tag">Cards</span>
+      <span className="sb-component-tag">Forms</span>
+      <span className="sb-component-tag">Modals</span>
+      <span className="sb-component-tag">Navigation</span>
+    </div>
+  </div>
+</div>
+
+<div className="sb-container">
+  <div className='sb-section-title'>
+    # Como Executar Localmente
+  </div>
+
+  <div className="sb-instructions">
+    <div className="sb-instruction-card">
+      <div className="sb-instruction-step">1</div>
+      <div>
+        <h4>Instalação</h4>
+        <code>pnpm install</code>
+      </div>
+    </div>
+
+    <div className="sb-instruction-card">
+      <div className="sb-instruction-step">2</div>
+      <div>
+        <h4>Iniciar Aplicação</h4>
+        <code>pnpm run dev</code>
+        <p>Acesse: <a href="http://localhost:3000" className="sb-link">http://localhost:3000</a></p>
+      </div>
+    </div>
+
+    <div className="sb-instruction-card">
+      <div className="sb-instruction-step">3</div>
+      <div>
+        <h4>Popular Banco de Dados</h4>
+        <code>Acesse: /seed</code>
+      </div>
+    </div>
+
+    <div className="sb-instruction-card">
+      <div className="sb-instruction-step">4</div>
+      <div>
+        <h4>Login</h4>
+        <p>Email: <strong>user@email.com</strong></p>
+        <p>Senha: <strong>123456</strong></p>
+      </div>
+    </div>
+
+    <div className="sb-instruction-card">
+      <div className="sb-instruction-step">5</div>
+      <div>
+        <h4>Storybook</h4>
+        <code>pnpm run storybook</code>
+        <p>Acesse: <a href="http://localhost:6006" className="sb-link">http://localhost:6006</a></p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  {`
+  .sb-container {
+    margin-bottom: 48px;
+  }
+
+  .sb-section-title {
+    margin-bottom: 32px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #1a365d;
+  }
+
+  /* Tech Stack */
+  .sb-tech-stack {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin: 32px 0;
+  }
+
+  .sb-tech-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    min-width: 80px;
+  }
+
+  .sb-tech-icon {
+    font-size: 24px;
+  }
+
+  /* Features Grid */
+  .sb-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .sb-feature-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid #e2e8f0;
+  }
+
+  .sb-feature-header {
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  .sb-feature-header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #2d3748;
+  }
+
+  .sb-feature-list {
+    padding-left: 20px;
+    margin: 0;
+  }
+
+  .sb-feature-list li {
+    margin-bottom: 8px;
+    color: #4a5568;
+  }
+
+  /* Components List */
+  .sb-components-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0;
+  }
+
+  .sb-component-tag {
+    background: #ebf8ff;
+    color: #3182ce;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+  }
+
+  /* Instructions */
+  .sb-instructions {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .sb-instruction-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: white;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid #e2e8f0;
+  }
+
+  .sb-instruction-step {
+    background: #4299e1;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  .sb-instruction-card h4 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    color: #2d3748;
+  }
+
+  .sb-instruction-card code {
+    display: inline-block;
+    background: #f7fafc;
+    color: #3182ce;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+    border: 1px solid #bee3f8;
+    margin-bottom: 8px;
+  }
+
+  .sb-link {
+    color: #3182ce;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .sb-link:hover {
+    text-decoration: underline;
+  }
+
+  @media screen and (max-width: 768px) {
+    .sb-features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  `}
+</style>
