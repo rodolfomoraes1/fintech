@@ -7,6 +7,8 @@ import {
   InvoicesTable,
   LatestInvoiceRaw,
   Revenue,
+  User,
+  UserBalance,
 } from "./definitions";
 import { formatCurrency } from "./utils";
 
@@ -20,6 +22,66 @@ export async function fetchRevenue() {
   } catch (error) {
     console.error("Database Error:", error);
     throw new Error("Failed to fetch revenue data.");
+  }
+}
+
+export async function fetchUserInfo() {
+  try {
+    const data = await sql<User[]>`
+      SELECT
+        users.id,
+        users.name,
+        users.email
+      FROM users
+    `;
+
+    return data;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch revenue data.");
+  }
+}
+
+export async function fetchUserBalance() {
+  try {
+    const data = await sql<UserBalance[]>`
+      SELECT
+        id,
+        current_balance,
+        date
+      FROM user_balance
+      ORDER BY date DESC
+      LIMIT 1
+    `;
+
+    return data;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch revenue data.");
+  }
+}
+
+export async function fetchLatestPersonalInvoices() {
+  try {
+    const data = await sql<PersonalInvoice[]>`
+      SELECT
+        personal_invoices.id,
+        personal_invoices.receiver_name,
+        personal_invoices.amount,
+        personal_invoices.type,
+        personal_invoices.date
+      FROM personal_invoices
+      ORDER BY personal_invoices.date DESC
+      LIMIT 5`;
+
+    const latestInvoices = data.map((invoice) => ({
+      ...invoice,
+      amount: formatCurrency(invoice.amount),
+    }));
+    return latestInvoices;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch the latest invoices.");
   }
 }
 

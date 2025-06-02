@@ -1,14 +1,11 @@
 "use client";
 
 import React from "react";
-import { AppBar, Toolbar, IconButton, useMediaQuery } from "@mui/material";
+import { AppBar, Toolbar, IconButton } from "@mui/material";
 import { Bars3Icon } from "@heroicons/react/24/outline";
-import { useTheme } from "@mui/material/styles";
 import UserMenu from "./user-menu";
 
 export default function Header() {
-  const theme = useTheme();
-
   return (
     <AppBar position="fixed" className="!bg-dark">
       <Toolbar className="flex justify-between px-4">

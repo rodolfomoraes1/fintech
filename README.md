@@ -22,7 +22,7 @@ Além disso, aplique os conceitos de Programação Orientada a Objetos (POO).
 `pnpm run dev`
 
 3 - Faça login com o usuário
-email: `user@nextmail.com`
+email: `user@email.com`
 password: `123456`
 
 ## Requisitos
@@ -30,8 +30,8 @@ password: `123456`
 ### Home Page
 
 - [x] Uma página inicial simples que dá boas-vindas aos usuários (landing page).
-- [ ] Exibir informações sobre o saldo da conta corrente e um extrato das últimas transações.
-- [ ] Incluir uma seção para iniciar uma nova transação, com opções para selecionar o tipo de transação e inserir o valor
+- [x] Exibir informações sobre o saldo da conta corrente e um extrato das últimas transações.
+- [x] Incluir uma seção para iniciar uma nova transação, com opções para selecionar o tipo de transação e inserir o valor
 
 ### Listagem de Transações
 

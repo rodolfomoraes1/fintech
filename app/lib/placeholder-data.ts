@@ -3,15 +3,27 @@
 const users = [
   {
     id: "410544b2-4001-4271-9855-fec4b6a6442a",
-    name: "User",
-    email: "user@nextmail.com",
+    name: "José da Silva",
+    email: "user@email.com",
     password: "123456",
   },
+];
+
+const userBalance = [
   {
-    id: "410544b2-4001-4271-9855-fec4b6a6442a",
-    name: "José da Silva",
-    email: "admin@admin.com",
-    password: "admin",
+    id: "41052222-9999-4271-9855-fec4b6a6442a",
+    current_balance: 1200000,
+    date: "2024-06-01",
+  },
+  {
+    id: "41054333-9999-4271-9855-fec4b6a6442a",
+    current_balance: 1000000,
+    date: "2024-06-03",
+  },
+  {
+    id: "410544b2-9999-4271-9855-fec4b6a6442a",
+    current_balance: 1000000,
+    date: "2024-06-02",
   },
 ];
 
@@ -267,4 +279,4 @@ const personalInvoices = [
   },
 ];
 
-export { users, customers, invoices, revenue, personalInvoices };
+export { users, customers, invoices, revenue, personalInvoices, userBalance };

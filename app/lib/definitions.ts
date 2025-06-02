@@ -9,6 +9,18 @@ export type User = {
   password: string;
 };
 
+export type UserInfo = {
+  id: string;
+  name: string;
+  email: string;
+};
+
+export type UserBalance = {
+  id: string;
+  current_balance: number;
+  date: string;
+};
+
 export type Customer = {
   id: string;
   name: string;

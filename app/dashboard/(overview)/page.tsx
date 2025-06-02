@@ -10,7 +10,6 @@ import {
 } from "@/app/ui/components/skeletons";
 import CardWrapper from "@/app/ui/dashboard/card-wrapper";
 import Summary from "@/app/ui/dashboard/summary";
-import Cards from "@/app/ui/dashboard/cards";
 
 export default async function Page() {
   return (
@@ -20,11 +19,6 @@ export default async function Page() {
       <div className="flex flex-row justify-center mb-10">
         <Suspense fallback={<SummarySkeleton />}>
           <Summary />
-        </Suspense>
-      </div>
-      <div className="flex flex-row justify-center mb-10">
-        <Suspense fallback={<SummarySkeleton />}>
-          <Cards />
         </Suspense>
       </div>
 

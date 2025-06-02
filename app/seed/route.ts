@@ -6,6 +6,7 @@ import {
   revenue,
   users,
   personalInvoices,
+  userBalance,
 } from "../lib/placeholder-data";
 
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: "require" });
@@ -33,6 +34,29 @@ async function seedUsers() {
   );
 
   return insertedUsers;
+}
+
+async function seedUserBalance() {
+  await sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+  await sql`
+    CREATE TABLE IF NOT EXISTS user_balance (
+      id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+      current_balance INT NOT NULL,
+      date DATE NOT NULL
+    );
+  `;
+
+  const userBalances = await Promise.all(
+    userBalance.map(
+      (balance) => sql`
+        INSERT INTO user_balance (id, current_balance, date)
+        VALUES (${balance.id}, ${balance.current_balance}, ${balance.date})
+        ON CONFLICT (id) DO NOTHING;
+      `
+    )
+  );
+
+  return userBalances;
 }
 
 async function seedInvoices() {
@@ -136,6 +160,7 @@ async function seedPersonalInvoices() {
 async function cleanDatabase() {
   try {
     await sql`DROP TABLE IF EXISTS personal_invoices`;
+    await sql`DROP TABLE IF EXISTS user_balance`;
     await sql`DROP TABLE IF EXISTS invoices`;
     await sql`DROP TABLE IF EXISTS revenue`;
     await sql`DROP TABLE IF EXISTS customers`;
@@ -152,6 +177,7 @@ export async function GET() {
   try {
     const result = await sql.begin((sql) => [
       seedUsers(),
+      seedUserBalance(),
       seedCustomers(),
       seedInvoices(),
       seedRevenue(),
