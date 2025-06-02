@@ -4,6 +4,7 @@ import {
 } from "@/app/ui/personal-invoices/buttons";
 import { formatDateToLocal, formatCurrency } from "@/app/lib/utils";
 import { fetchFilteredPersonalInvoices } from "@/app/lib/data";
+import Operation from "../components/operation";
 
 export default async function InvoicesTable({
   query,
@@ -37,7 +38,9 @@ export default async function InvoicesTable({
                       {formatCurrency(invoice.amount)}
                     </p>
                     <p>{formatDateToLocal(invoice.date)}</p>
-                    <p>{invoice.type}</p>
+                    <p>
+                      <Operation operation={invoice.type} />
+                    </p>
                   </div>
                   <div className="flex justify-end gap-2">
                     <UpdatePersonalInvoice id={invoice.id} />
@@ -51,7 +54,7 @@ export default async function InvoicesTable({
             <thead className="rounded-lg text-left text-sm font-normal">
               <tr>
                 <th scope="col" className="px-4 py-5 font-medium sm:pl-6">
-                  Instituição
+                  Destinatário
                 </th>
                 <th scope="col" className="px-3 py-5 font-medium">
                   Quantia
@@ -83,7 +86,7 @@ export default async function InvoicesTable({
                     {formatDateToLocal(invoice.date)}
                   </td>
                   <td className="whitespace-nowrap px-3 py-3">
-                    {invoice.type}
+                    <Operation operation={invoice.type} />
                   </td>
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex justify-end gap-3">

@@ -1,5 +1,5 @@
 import Form from "@/app/ui/personal-invoices/edit-form";
-import Breadcrumbs from "@/app/ui/invoices/breadcrumbs";
+import Breadcrumbs from "@/app/ui/personal-invoices/breadcrumbs";
 import { fetchPersonalInvoiceById } from "@/app/lib/data";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
@@ -21,9 +21,9 @@ export default async function Page(props: { params: Promise<{ id: string }> }) {
     <main>
       <Breadcrumbs
         breadcrumbs={[
-          { label: "Invoices", href: "/dashboard/personal-invoices" },
+          { label: "Transações", href: "/dashboard/personal-invoices" },
           {
-            label: "Edit Invoice",
+            label: "Editar Transação",
             href: `/dashboard/personal-invoices/${id}/edit`,
             active: true,
           },

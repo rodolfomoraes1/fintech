@@ -12,23 +12,6 @@ import clsx from "clsx";
 
 const links = [
   { name: "Início", href: "/dashboard", icon: HomeIcon },
-  /*
-  {
-    name: "Transferências",
-    href: "/dashboard/invoices",
-    icon: DocumentDuplicateIcon,
-  },
-  {
-    name: "Investimentos",
-    href: "/dashboard/investments",
-    icon: ArrowTrendingUpIcon,
-  },
-  {
-    name: "Outros serviço",
-    href: "/dashboard/other-services",
-    icon: BanknotesIcon,
-  },
-  */
   {
     name: "Transferências",
     href: "/dashboard/personal-invoices",

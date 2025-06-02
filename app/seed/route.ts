@@ -1,13 +1,6 @@
 import bcrypt from "bcryptjs";
 import postgres from "postgres";
-import {
-  invoices,
-  customers,
-  revenue,
-  users,
-  personalInvoices,
-  userBalance,
-} from "../lib/placeholder-data";
+import { users, personalInvoices, userBalance } from "../lib/placeholder-data";
 
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: "require" });
 
@@ -59,78 +52,6 @@ async function seedUserBalance() {
   return userBalances;
 }
 
-async function seedInvoices() {
-  await sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-
-  await sql`
-    CREATE TABLE IF NOT EXISTS invoices (
-      id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-      customer_id UUID NOT NULL,
-      amount INT NOT NULL,
-      status VARCHAR(255) NOT NULL,
-      date DATE NOT NULL
-    );
-  `;
-
-  const insertedInvoices = await Promise.all(
-    invoices.map(
-      (invoice) => sql`
-        INSERT INTO invoices (customer_id, amount, status, date)
-        VALUES (${invoice.customer_id}, ${invoice.amount}, ${invoice.status}, ${invoice.date})
-        ON CONFLICT (id) DO NOTHING;
-      `
-    )
-  );
-
-  return insertedInvoices;
-}
-
-async function seedCustomers() {
-  await sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-
-  await sql`
-    CREATE TABLE IF NOT EXISTS customers (
-      id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
-      name VARCHAR(255) NOT NULL,
-      email VARCHAR(255) NOT NULL,
-      image_url VARCHAR(255) NOT NULL
-    );
-  `;
-
-  const insertedCustomers = await Promise.all(
-    customers.map(
-      (customer) => sql`
-        INSERT INTO customers (id, name, email, image_url)
-        VALUES (${customer.id}, ${customer.name}, ${customer.email}, ${customer.image_url})
-        ON CONFLICT (id) DO NOTHING;
-      `
-    )
-  );
-
-  return insertedCustomers;
-}
-
-async function seedRevenue() {
-  await sql`
-    CREATE TABLE IF NOT EXISTS revenue (
-      month VARCHAR(4) NOT NULL UNIQUE,
-      revenue INT NOT NULL
-    );
-  `;
-
-  const insertedRevenue = await Promise.all(
-    revenue.map(
-      (rev) => sql`
-        INSERT INTO revenue (month, revenue)
-        VALUES (${rev.month}, ${rev.revenue})
-        ON CONFLICT (month) DO NOTHING;
-      `
-    )
-  );
-
-  return insertedRevenue;
-}
-
 async function seedPersonalInvoices() {
   await sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
 
@@ -161,9 +82,6 @@ async function cleanDatabase() {
   try {
     await sql`DROP TABLE IF EXISTS personal_invoices`;
     await sql`DROP TABLE IF EXISTS user_balance`;
-    await sql`DROP TABLE IF EXISTS invoices`;
-    await sql`DROP TABLE IF EXISTS revenue`;
-    await sql`DROP TABLE IF EXISTS customers`;
     await sql`DROP TABLE IF EXISTS users`;
 
     console.log("Database cleaned successfully");
@@ -176,15 +94,13 @@ async function cleanDatabase() {
 export async function GET() {
   try {
     const result = await sql.begin((sql) => [
+      //cleanDatabase(),
       seedUsers(),
       seedUserBalance(),
-      seedCustomers(),
-      seedInvoices(),
-      seedRevenue(),
       seedPersonalInvoices(),
     ]);
 
-    return Response.json({ message: "Database seeded successfully" });
+    return Response.json({ message: "Database povoado com sucesso" });
   } catch (error) {
     return Response.json({ error }, { status: 500 });
   }

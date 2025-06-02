@@ -60,3 +60,7 @@ password: `123456`
 - [x] Registrar (sem integração com BD)
 - [x] Página "Em construção"
 - [x] Página "Not found"
+- [x] Breadcrumbs
+- [x] Filtragem das transações
+- [x] Páginação das transações
+- [x] Páginas de erro

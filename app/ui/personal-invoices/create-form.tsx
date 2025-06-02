@@ -1,6 +1,5 @@
 "use client";
 
-import { CustomerField } from "@/app/lib/definitions";
 import Link from "next/link";
 import {
   CheckIcon,
@@ -12,7 +11,7 @@ import { Button } from "@/app/ui/components/button";
 import { createPersonalInvoice, NewState } from "@/app/lib/actions";
 import { useActionState } from "react";
 
-export default function Form({ customers }: { customers: CustomerField[] }) {
+export default function Form() {
   const initialState: NewState = { message: null, errors: {} };
   const [state, formAction] = useActionState(
     createPersonalInvoice,
