@@ -19,6 +19,12 @@ Além disso, aplique os conceitos de Programação Orientada a Objetos (POO).
 
 `https://github.com/rodolfomoraes1/fintech/`
 
+## Criação do banco de dados
+
+Para criar o seu banco de dados e conectar a aplicação siga o tutorial abaixo:
+
+`https://nextjs.org/learn/dashboard-app/setting-up-your-database`
+
 ## Executar o projeto localmente
 
 1 - Instalar dependências
