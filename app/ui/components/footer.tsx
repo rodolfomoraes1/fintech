@@ -32,6 +32,7 @@ export function Footer() {
                 src="/fintech/logo-white.png"
                 alt="Fintech logo"
                 fill
+                sizes="(max-width: 768px) 100vw, 300px"
                 className="object-contain"
                 priority
               />

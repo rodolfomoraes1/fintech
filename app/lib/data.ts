@@ -135,7 +135,6 @@ export async function fetchPersonalInvoicesPages(query: string) {
 }
 
 export async function fetchPersonalInvoiceById(id: string) {
-  console.log("aqui123", id);
   try {
     const data = await sql<PersonalInvoice[]>`
       SELECT

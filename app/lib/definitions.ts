@@ -1,15 +1,14 @@
-export type User = {
+interface BaseUser {
   id: string;
   name: string;
   email: string;
-  password: string;
-};
+}
 
-export type UserInfo = {
-  id: string;
-  name: string;
-  email: string;
-};
+export interface User extends BaseUser {
+  password: string;
+}
+
+export interface UserInfo extends BaseUser {}
 
 export type UserBalance = {
   id: string;
@@ -17,10 +16,12 @@ export type UserBalance = {
   date: string;
 };
 
+export type InvoiceType = "deposito" | "transferencia" | "pagamento";
+
 export type PersonalInvoice = {
   id: string;
-  receiver_name: string;
+  receiverName: string;
   amount: number;
   date: string;
-  type: "deposito" | "transferencia" | "pagamento";
+  type: InvoiceType;
 };

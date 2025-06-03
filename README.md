@@ -13,6 +13,7 @@ Além disso, aplique os conceitos de Programação Orientada a Objetos (POO).
 - mui material
 - typescript
 - storybook
+- postgreSQL
 
 ## Repositório
 
