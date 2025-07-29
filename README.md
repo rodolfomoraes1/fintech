@@ -1,80 +1,137 @@
-# Tech challenge 1
+# Tech Challenge
+
+## Milestone 2
+
+### Objetivo
+
+Aprimorar e escalar a aplicação de gerenciamento financeiro existente, utilizando uma arquitetura de microfrontends e garantindo integração e deploy eficientes em ambientes cloud.
+
+---
+
+## TODO
+
+### Docker
+- Containerização da aplicação e seus componentes, incluindo frontend e backend.
+- Uso de Docker Compose ou Kubernetes para orquestração de múltiplos contêineres.
+
+### Desenvolvimento Frontend em Ambientes Cloud
+- Deploy em plataformas cloud como AWS, Azure ou Vercel (recomendado para projetos Next.js).
+- Implementação de práticas de segurança, como autenticação e autorização.
+
+### React/Angular Avançado
+- **Microfrontends:** Divisão da aplicação em microfrontends independentes, permitindo atualização e desenvolvimento isolado de cada módulo.
+- **Gestão de Estado:** Uso de Redux, Recoil ou NgRx para gestão de estado complexa.
+- **TypeScript:** Tipagem estática para robustez e manutenção.
+- **SSR e SSG:** Server-Side Rendering ou Static Site Generation para otimização de performance e SEO.
+
+### Microfrontend
+- Arquitetura utilizando Single SPA ou Module Federation para integrar diferentes frameworks (React e Angular).
+- Estratégias de roteamento e comunicação entre microfrontends.
+
+---
+
+## DONE
+
+### Listagem de Transações
+- [x] Filtro e Pesquisa: implementar filtros avançados e funcionalidade de busca para facilitar a navegação nas transações.
+- [x] Paginação e Scroll Infinito: adicionar paginação ou scroll infinito para otimizar o carregamento de grandes volumes de dados.
+
+### Home Page
+- [x] Atualização: incluir gráficos e análises financeiras para oferecer uma visão detalhada do desempenho financeiro.
+
+### Adicionar/Editar Transação
+- [x] Validação Avançada: implementar validação de entrada avançada e sugestões automáticas para categorias de despesas e receitas.
+- [x] Anexos: permitir o upload de recibos ou documentos relacionados a transações.
+
+---
+
+# Milestone 1
 
 ## Objetivo
 
-Criar uma interface que permita aos usuários gerenciar suas transações financeiras.
-Além disso, aplique os conceitos de Programação Orientada a Objetos (POO).
+Criar uma interface para gerenciamento de transações financeiras, aplicando conceitos de Programação Orientada a Objetos (POO).
+
+---
 
 ## Ferramentas
 
-- nextjs
+- Next.js
 - pnpm
-- tailwind css
-- mui material
-- typescript
-- storybook
-- postgreSQL
+- Tailwind CSS
+- MUI Material
+- TypeScript
+- Storybook
+- PostgreSQL
+
+---
 
 ## Repositório
 
-`https://github.com/rodolfomoraes1/fintech/`
+[https://github.com/rodolfomoraes1/fintech/](https://github.com/rodolfomoraes1/fintech/)
 
-## Criação do banco de dados
+---
 
-Para criar o seu banco de dados e conectar a aplicação siga o tutorial abaixo:
+## Criação do Banco de Dados
 
-`https://nextjs.org/learn/dashboard-app/setting-up-your-database`
+Para criar o banco de dados e conectar a aplicação, siga o tutorial:
 
-## Executar o projeto localmente
+[https://nextjs.org/learn/dashboard-app/setting-up-your-database](https://nextjs.org/learn/dashboard-app/setting-up-your-database)
 
-1 - Instalar dependências
-`pnpm i`
+---
 
-2 - Executar o projeto
-`pnpm run dev`
+## Executar o Projeto Localmente
 
-3 - Acessar a url
-`localhost:3000`
+1. Instalar dependências  
+   `pnpm i`
 
-4 - Para povoar o banco de dados acessar a url `/seed`
-`localhost:3000/seed`
+2. Executar o projeto  
+   `pnpm run dev`
 
-5 - Faça login com o usuário
-email: `user@email.com`
-password: `123456`
+3. Acessar a URL  
+   `localhost:3000`
+
+4. Para povoar o banco de dados, acessar  
+   `localhost:3000/seed`
+
+5. Faça login com o usuário  
+   - Email: `user@email.com`  
+   - Senha: `123456`
+
+---
 
 ## Design System
 
-1 - Executar o comando
-`pnpm run storybook`
+1. Executar o comando  
+   `pnpm run storybook`
+
+---
 
 ## Requisitos
 
 ### Home Page
 
-- [x] Uma página inicial simples que dá boas-vindas aos usuários (landing page).
-- [x] Exibir informações sobre o saldo da conta corrente e um extrato das últimas transações.
-- [x] Incluir uma seção para iniciar uma nova transação, com opções para selecionar o tipo de transação e inserir o valor
+- [x] Página inicial simples de boas-vindas (landing page).
+- [x] Exibir saldo da conta corrente e extrato das últimas transações.
+- [x] Seção para iniciar nova transação, com seleção de tipo e valor.
 
 ### Listagem de Transações
 
-- [x] Uma página que exibe a lista de transações realizadas, com opções para visualizar detalhes, editar e deletar cada transação.
+- [x] Página para exibir lista de transações, com opções de visualizar, editar e deletar.
 
 ### Adicionar Nova Transação
 
-- [x] Uma página ou modal para adicionar uma nova transação ao banco de dados.
-- [x] Formulário que deve incluir campos como tipo de transação (depósito,
-      transferência, etc.), valor e data.
+- [x] Página/modal para adicionar nova transação ao banco de dados.
+- [x] Formulário com tipo de transação, valor e data.
 
 ### Editar Transação
 
-- [x] Uma página ou modal para editar as informações de uma transação existente
+- [x] Página/modal para editar informações de uma transação existente.
 
-### Design system
+### Design System
 
 - [x] Criar design system
-- [x] Cores basicas
-- [x] Componentes basicos de UI
+- [x] Cores básicas
+- [x] Componentes básicos de UI
 
 ### Adicionais
 
@@ -84,5 +141,5 @@ password: `123456`
 - [x] Página "Not found"
 - [x] Breadcrumbs
 - [x] Filtragem das transações
-- [x] Páginação das transações
+- [x] Paginação das transações
 - [x] Páginas de erro

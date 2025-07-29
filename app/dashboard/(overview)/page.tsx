@@ -1,7 +1,9 @@
 import LatestInvoices from "@/app/ui/dashboard/latest-invoices";
+import Statistics from "@/app/ui/dashboard/statistics";
 import { Suspense } from "react";
 import {
   LatestInvoicesSkeleton,
+  StatisticsSkeleton,
   SummarySkeleton,
 } from "@/app/ui/components/skeletons";
 import Summary from "@/app/ui/dashboard/summary";
@@ -14,6 +16,12 @@ export default async function Page() {
       <div className="flex flex-row justify-center mb-10">
         <Suspense fallback={<SummarySkeleton />}>
           <Summary />
+        </Suspense>
+      </div>
+
+      <div className="flex flex-row justify-center">
+        <Suspense fallback={<StatisticsSkeleton />}>
+          <Statistics />
         </Suspense>
       </div>
 

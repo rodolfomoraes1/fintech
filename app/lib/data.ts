@@ -157,3 +157,34 @@ export async function fetchPersonalInvoiceById(id: string) {
     throw new Error("Failed to fetch invoice.");
   }
 }
+
+export async function fetchLatestPersonalInvoicesByMonth() {
+  try {
+    const latestMonthResult = await sql<{ month: string }[]>`
+      SELECT TO_CHAR(MAX(date), 'YYYY-MM') as month
+      FROM personal_invoices
+    `;
+    const latestMonth = latestMonthResult[0]?.month;
+
+    if (!latestMonth) {
+      return [];
+    }
+
+    const data = await sql<PersonalInvoice[]>`
+      SELECT
+        personal_invoices.id,
+        personal_invoices.receiver_name,
+        personal_invoices.amount,
+        personal_invoices.type,
+        personal_invoices.date
+      FROM personal_invoices
+      WHERE TO_CHAR(personal_invoices.date, 'YYYY-MM') = ${latestMonth}
+      ORDER BY personal_invoices.date DESC
+    `;
+
+    return data;
+  } catch (error) {
+    console.error("Database Error:", error);
+    throw new Error("Failed to fetch invoices by latest month.");
+  }
+}

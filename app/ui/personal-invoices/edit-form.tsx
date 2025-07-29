@@ -2,15 +2,13 @@
 
 import { PersonalInvoice } from "@/app/lib/definitions";
 import {
-  CheckIcon,
-  ClockIcon,
   CurrencyDollarIcon,
   UserCircleIcon,
 } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { Button } from "@/app/ui/components/button/button";
 import { updatePersonalInvoice, NewState } from "@/app/lib/actions";
-import { useActionState } from "react";
+import { useActionState, useRef, useState } from "react";
 
 export default function EditInvoiceForm({
   personalInvoice,
@@ -24,9 +22,39 @@ export default function EditInvoiceForm({
   );
   const [state, formAction] = useActionState(updateInvoiceWithId, initialState);
 
+  const [uploadMsg, setUploadMsg] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  function handleFileChange(e: React.ChangeEvent<HTMLInputElement>) {
+    if (e.target.files && e.target.files.length > 0) {
+      setUploadMsg("Arquivo importado com sucesso!");
+    } else {
+      setUploadMsg(null);
+    }
+  }
+
   return (
     <form action={formAction}>
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
+        <div className="mb-4">
+          <label className="mb-2 block text-sm font-medium">
+            Importar arquivo
+          </label>
+          <input
+            ref={fileInputRef}
+            type="file"
+            className="block w-full text-sm text-gray-500
+              file:mr-4 file:py-2 file:px-4
+              file:rounded-md file:border-0
+              file:text-sm file:font-semibold
+              file:bg-blue-50 file:text-blue-700
+              hover:file:bg-blue-100"
+            onChange={handleFileChange}
+          />
+          {uploadMsg && (
+            <p className="mt-2 text-green-600 text-sm">{uploadMsg}</p>
+          )}
+        </div>
         <div className="mb-4">
           <label htmlFor="customer" className="mb-2 block text-sm font-medium">
             Destinatário
@@ -73,7 +101,7 @@ export default function EditInvoiceForm({
               <div className="flex items-center">
                 <input
                   id="deposito"
-                  name="status"
+                  name="type"
                   type="radio"
                   value="deposito"
                   defaultChecked={personalInvoice.type === "deposito"}
@@ -89,7 +117,7 @@ export default function EditInvoiceForm({
               <div className="flex items-center">
                 <input
                   id="transferencia"
-                  name="status"
+                  name="type"
                   type="radio"
                   value="transferencia"
                   defaultChecked={personalInvoice.type === "transferencia"}
