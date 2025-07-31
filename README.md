@@ -16,13 +16,9 @@ Aprimorar e escalar a aplicação de gerenciamento financeiro existente, utiliza
 
 ### Desenvolvimento Frontend em Ambientes Cloud
 - Deploy em plataformas cloud como AWS, Azure ou Vercel (recomendado para projetos Next.js).
-- Implementação de práticas de segurança, como autenticação e autorização.
 
 ### React/Angular Avançado
 - **Microfrontends:** Divisão da aplicação em microfrontends independentes, permitindo atualização e desenvolvimento isolado de cada módulo.
-- **Gestão de Estado:** Uso de Redux, Recoil ou NgRx para gestão de estado complexa.
-- **TypeScript:** Tipagem estática para robustez e manutenção.
-- **SSR e SSG:** Server-Side Rendering ou Static Site Generation para otimização de performance e SEO.
 
 ### Microfrontend
 - Arquitetura utilizando Single SPA ou Module Federation para integrar diferentes frameworks (React e Angular).
@@ -42,6 +38,14 @@ Aprimorar e escalar a aplicação de gerenciamento financeiro existente, utiliza
 ### Adicionar/Editar Transação
 - [x] Validação Avançada: implementar validação de entrada avançada e sugestões automáticas para categorias de despesas e receitas.
 - [x] Anexos: permitir o upload de recibos ou documentos relacionados a transações.
+
+### Desenvolvimento Frontend em Ambientes Cloud
+- [x] Implementação de práticas de segurança, como autenticação e autorização.
+
+### React/Angular Avançado
+- [x] Gestão de Estado: Uso de Redux, Recoil ou NgRx para gestão de estado complexa. (Uso de context api para informações do usuário e redux para informação da conta e banco. Feito dessa forma para mostrar o uso.)
+- [x] TypeScript: Tipagem estática para robustez e manutenção.
+- [x] SSR e SSG: Server-Side Rendering ou Static Site Generation para otimização de performance e SEO.
 
 ---
 
