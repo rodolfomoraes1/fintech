@@ -1,17 +1,12 @@
 "use client";
 
-import React, { ReactNode, useActionState } from "react";
-import { authenticate } from "@/app/lib/actions";
-import { useSearchParams } from "next/navigation";
+import React, { ReactNode } from "react";
 import {
   Modal as MuiModal,
   Box,
-  TextField,
   Typography,
-  Alert,
 } from "@mui/material";
 import Image, { StaticImageData } from "next/image";
-import { Button } from "./button/button";
 
 const modalStyle = {
   position: "absolute",

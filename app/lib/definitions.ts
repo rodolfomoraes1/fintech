@@ -20,7 +20,7 @@ export type InvoiceType = "deposito" | "transferencia" | "pagamento";
 
 export type PersonalInvoice = {
   id: string;
-  receiverName: string;
+  receiver_name: string;
   amount: number;
   date: string;
   type: InvoiceType;

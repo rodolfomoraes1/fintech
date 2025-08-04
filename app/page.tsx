@@ -2,10 +2,12 @@ import Image from "next/image";
 import { AdvantageCard } from "./ui/components/advantage-card/advantage-card";
 import { Footer } from "./ui/components/footer";
 import HeaderHome from "./ui/components/header-home";
+import { Suspense } from "react";
+import { Loading } from "./ui/components/loading";
 
 export default function Page() {
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       <HeaderHome />
       <main className="flex min-h-screen flex-col p-6 bg-primary-gradient">
         <div className="flex flex-col lg:flex-row justify-center items-center gap-8 p-4 w-full max-w-screen-xl mx-auto">
@@ -66,6 +68,6 @@ export default function Page() {
         </div>
       </main>
       <Footer />
-    </>
+    </Suspense>
   );
 }

@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import "@/app/ui//styles/global.css";
 import { inter } from "@/app/ui/styles/fonts";
+import { Suspense } from "react";
+import { Loading } from "../ui/components/loading";
 
 export const metadata: Metadata = {
   title: {
@@ -17,7 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+        <Suspense fallback={<Loading />}>
+          <body className={`${inter.className} antialiased`}>{children}</body>
+        </Suspense>
     </html>
   );
 }

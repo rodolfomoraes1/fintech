@@ -5,6 +5,8 @@ import { Footer } from "./ui/components/footer";
 import Image from "next/image";
 import { Button } from "./ui/components/button/button";
 import { useRouter } from "next/navigation";
+import { Suspense } from "react";
+import { Loading } from "./ui/components/loading";
 
 export default function NotFound() {
   const router = useRouter();
@@ -14,7 +16,7 @@ export default function NotFound() {
   };
 
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       <HeaderHome />
       <main className="flex min-h-screen flex-col p-6 bg-primary-gradient">
         <div className="flex flex-col lg:flex-col justify-center items-center gap-8 p-4 w-full max-w-screen-xl mx-auto">
@@ -39,6 +41,6 @@ export default function NotFound() {
         </div>
       </main>
       <Footer />
-    </>
+    </Suspense>
   );
 }
