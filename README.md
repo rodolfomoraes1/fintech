@@ -2,6 +2,13 @@
 
 ## Milestone 2
 
+### Instruções
+
+Acesse o projeto: 
+   - URL: https://fintech-rmodhhoik-rodolfomoraes1s-projects.vercel.app/
+   - Email: `user@email.com`  
+   - Senha: `123456`
+
 ### Objetivo
 
 Aprimorar e escalar a aplicação de gerenciamento financeiro existente, utilizando uma arquitetura de microfrontends e garantindo integração e deploy eficientes em ambientes cloud.
@@ -13,9 +20,6 @@ Aprimorar e escalar a aplicação de gerenciamento financeiro existente, utiliza
 ### Docker
 - Containerização da aplicação e seus componentes, incluindo frontend e backend.
 - Uso de Docker Compose ou Kubernetes para orquestração de múltiplos contêineres.
-
-### Desenvolvimento Frontend em Ambientes Cloud
-- Deploy em plataformas cloud como AWS, Azure ou Vercel (recomendado para projetos Next.js).
 
 ### React/Angular Avançado
 - **Microfrontends:** Divisão da aplicação em microfrontends independentes, permitindo atualização e desenvolvimento isolado de cada módulo.
@@ -40,6 +44,7 @@ Aprimorar e escalar a aplicação de gerenciamento financeiro existente, utiliza
 - [x] Anexos: permitir o upload de recibos ou documentos relacionados a transações.
 
 ### Desenvolvimento Frontend em Ambientes Cloud
+- [x] Deploy em plataformas cloud como AWS, Azure ou Vercel (recomendado para projetos Next.js).
 - [x] Implementação de práticas de segurança, como autenticação e autorização.
 
 ### React/Angular Avançado
