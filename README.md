@@ -9,6 +9,10 @@ Acesse o projeto:
    - Email: `user@email.com`  
    - Senha: `123456`
 
+Operações no banco de dados:
+   - acesse o endpoint `/seed` para povoar o banco de dados (utilizar com cuidado)
+   - acesse o endpoint `/clean-seed` para limpar o banco de dados
+
 ### Objetivo
 
 Aprimorar e escalar a aplicação de gerenciamento financeiro existente, utilizando uma arquitetura de microfrontends e garantindo integração e deploy eficientes em ambientes cloud.
