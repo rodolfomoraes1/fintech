@@ -5,7 +5,7 @@
 ### Instruções
 
 Acesse o projeto: 
-   - URL: https://fintech-rmodhhoik-rodolfomoraes1s-projects.vercel.app/
+   - URL: https://fintech-sand-alpha.vercel.app/
    - Email: `user@email.com`  
    - Senha: `123456`
 
@@ -20,10 +20,6 @@ Aprimorar e escalar a aplicação de gerenciamento financeiro existente, utiliza
 ---
 
 ## TODO
-
-### Docker
-- Containerização da aplicação e seus componentes, incluindo frontend e backend.
-- Uso de Docker Compose ou Kubernetes para orquestração de múltiplos contêineres.
 
 ### React/Angular Avançado
 - **Microfrontends:** Divisão da aplicação em microfrontends independentes, permitindo atualização e desenvolvimento isolado de cada módulo.
@@ -55,6 +51,10 @@ Aprimorar e escalar a aplicação de gerenciamento financeiro existente, utiliza
 - [x] Gestão de Estado: Uso de Redux, Recoil ou NgRx para gestão de estado complexa. (Uso de context api para informações do usuário e redux para informação da conta e banco. Feito dessa forma para mostrar o uso.)
 - [x] TypeScript: Tipagem estática para robustez e manutenção.
 - [x] SSR e SSG: Server-Side Rendering ou Static Site Generation para otimização de performance e SEO.
+
+### Docker
+- [x] Containerização da aplicação e seus componentes, incluindo frontend e backend.
+- [x] Uso de Docker Compose ou Kubernetes para orquestração de múltiplos contêineres.
 
 ---
 
